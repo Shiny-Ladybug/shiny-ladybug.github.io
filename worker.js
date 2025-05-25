@@ -74,6 +74,11 @@ async function fetchLatestRelease() {
     }
 }
 
+window.fetchLatestRelease = fetchLatestRelease;
+
+// Call it once on page load
+document.addEventListener("DOMContentLoaded", fetchLatestRelease);
+
 document.addEventListener('DOMContentLoaded', () => {
     const ball = document.getElementById('afk-ball');
     const base = document.getElementById('afk-base');
