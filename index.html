@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Florr Auto AFK</title>
+  <link rel="icon" type="image/x-icon" href="assets/icon.ico">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url(custom.css);
+  </style>
+</head>
+
+<body class="text-black font-sans">
+  <!-- Navigation Bar -->
+  <div id="navbar" class="fixed top-0 left-0 w-full bg-white text-black shadow-md z-50 fade-in">
+    <div class="max-w-screen-xl mx-auto px-6 py-[10px] flex justify-between items-center h-[70px]">
+      <div class="text-xl font-bold">Florr Auto AFK</div>
+      <div class="space-x-6">
+        <a href="#download" class="hover:text-blue-600 font-medium">Download</a>
+        <a href="#features" class="hover:text-green-600 font-medium">Features</a>
+        <a href="#gallery" class="hover:text-yellow-600 font-medium">Gallery</a>
+        <a href="#contact" class="hover:text-gray-600 font-medium">Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section: Download -->
+  <section id="download" class="min-h-screen flex items-start pt-24 px-6">
+    <div class="w-1/2 p-6 flex flex-col justify-start items-start ml-24 mt-[14vh] relative z-10">
+      <!-- Removed bg classes, added relative and z-index -->
+      <h1 class="text-5xl font-bold mb-4">Download</h1>
+      <p class="text-xl mb-4">
+        Tired of the odd, snake-like AFK Checks that stop you from relaxing while playing
+        <a href="https://florr.io" class="text-blue-600 underline hover:text-blue-800" target="_blank"
+          rel="noopener noreferrer">florr.io</a>?
+        Download the latest version of Florr Auto AFK to easily bypass them with high accuracy.
+        Our application has not caused any bans so far, so it appears to be safe to use.
+      </p>
+      <p class="text-xl mb-4"><strong>Latest version: <span id="latest-version">Loading...</span></strong></p>
+      <div class="flex space-x-4">
+        <div class="relative group">
+          <button id="download-exe-btn"
+            class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-7 rounded-lg inline-flex items-center shadow-lg mb-2 transition text-lg w-full">
+            <svg class="fill-current w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+              <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
+            </svg>
+            <span>Download Executable</span>
+          </button>
+          <div class="absolute left-0 w-full hidden group-hover:block z-20">
+            <!-- Increased z-index for dropdown -->
+            <a id="download-exe-mirror" href="#" target="_blank"
+              class="block bg-blue-400 hover:bg-blue-600 text-white px-6 py-2 rounded-b-lg shadow-lg transition text-base text-center">
+              Download via Mirror
+            </a>
+          </div>
+        </div>
+        <div class="relative group">
+          <button id="download-source-btn"
+            class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-7 rounded-lg inline-flex items-center shadow-lg mb-2 transition text-lg w-full">
+            <svg class="fill-current w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+              <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
+            </svg>
+            <span>Download Source Code</span>
+          </button>
+          <div class="absolute left-0 w-full hidden group-hover:block z-20">
+            <!-- Increased z-index for dropdown -->
+            <a id="download-source-mirror" href="#" target="_blank"
+              class="block bg-blue-400 hover:bg-blue-600 text-white px-6 py-2 rounded-b-lg shadow-lg transition text-base text-center">
+              Download via Mirror
+            </a>
+          </div>
+        </div>
+      </div>
+      <a href="https://github.com/Shiny-Ladybug/florr-auto-afk"
+        class="text-blue-600 underline hover:text-blue-800 text-lg">
+        View on GitHub
+      </a>
+    </div>
+    <div class="w-1/2 p-6 flex justify-center items-start mt-32 relative" style="height:400px;">
+      <img src="assets/base.svg" alt="AFK_Base" class="rounded-xl shadow-lg max-w-md w-full h-auto" id="afk-base"
+        style="width: 300px; height:auto; left:0; top:0; pointer-events:none;">
+      <img src="assets/ball.svg" alt="Ball" id="afk-ball" class="absolute"
+        style="width:33px; height:auto; left:0; top:0; pointer-events:none;">
+    </div>
+  </section>
+
+  <!-- Section: Features -->
+  <section id="features" class="min-h-screen flex items-start bg-green-100 pt-24 px-6 flex-row">
+    <div class="w-1/2 p-6 flex flex-col items-start justify-start ml-24 text-left mt-[14vh]">
+      <h2 class="text-5xl font-bold mb-4">Features</h2>
+      <p class="text-xl">1. Our state-of-the-art model achieves 90% accuracy.</p>
+      <p class="text-xl">2. A clean, user-friendly GUI.</p>
+      <p class="text-xl">3. Background detection and solving via window hooks.</p>
+      <p class="text-xl">4. AFK check notifications and debugging support.</p>
+      <p class="text-xl">5. Custom themes, parameters, and settings.</p>
+      <p class="text-xl">6. Noise reduction via the "exposure" method.</p>
+      <p class="text-xl">7. Includes detailed documentation (README.md, Settings.md).</p>
+      <p class="text-xl">(If you encounter issues, there is likely a solution in the README file.)</p>
+    </div>
+    <div class="w-1/2 p-6 flex justify-center items-start mt-32">
+      <img src="assets/workflow.png" alt="How It Works preview" class="rounded-xl shadow-lg max-w-md">
+    </div>
+  </section>
+
+  <!-- Section: Gallery -->
+  <section id="gallery" class="min-h-screen bg-yellow-100 pt-20 px-6 flex flex-col items-center">
+    <div class="w-full text-center mt-6">
+      <h2 class="text-5xl font-bold">Gallery</h2></br>
+      <p class="text-xl">
+        A collage of the countless AFK checks our model solved, and the training statistics.
+      </p>
+    </div>
+    <div class="flex justify-center items-center flex-grow mt-12 mb-12">
+      <img src="assets/Gallery.png" alt="Gallery preview" class="rounded-xl shadow-lg w-4/5 h-auto">
+    </div>
+    <div class="flex justify-center items-center flex-grow mt-12 mb-12">
+      <img src="assets/results-new.png" alt="Training Stats preview" class="rounded-xl shadow-lg w-4/5 h-auto">
+    </div>
+    <div class="w-full text-center mb-8">
+      <p class="text-lg text-gray-700">
+        Trained on 5/23/2025 based on 225 instances (192 train, 33 val) with 431 epochs.
+      </p>
+    </div>
+
+  </section>
+
+  <!-- Section: Contact -->
+  <section id="contact" class="w-full bg-gray-100 pl-24 pr-6 py-12 flex justify-start items-start">
+    <div class="max-w-3xl">
+      <h2 class="text-5xl font-bold mb-4">Contact</h2>
+      <p class="text-xl mb-4">
+        For questions or suggestions, contact us via
+        <a href="https://github.com/Shiny-Ladybug/florr-auto-afk/issues" target="_blank" rel="noopener noreferrer"
+          class="text-blue-600 underline hover:text-blue-800">
+          GitHub issue page
+        </a>
+        or QQ.
+      </p>
+      <p class="text-md text-gray-600 leading-relaxed">
+        Contributors:
+        <a href="https://github.com/RandomGuy1520" rel="noopener noreferrer" class="font-bold hover:underline">
+          RandomGuy1520
+        </a>,
+        <a href="https://github.com/Shiny-Ladybug" rel="noopener noreferrer" class="font-bold hover:underline">
+          Shiny Ladybug
+        </a>
+        <br />
+
+        Website by:
+        <a href="https://github.com/RandomGuy1520" rel="noopener noreferrer" class="font-bold hover:underline">
+          RandomGuy1520
+        </a>
+        <br />
+        &copy; 2025 Florr Auto AFK. All rights reserved. Project under GPL-3.0 License.
+      </p>
+    </div>
+  </section>
+
+  <script src="worker.js"></script>
+</body>
+
+</html>
