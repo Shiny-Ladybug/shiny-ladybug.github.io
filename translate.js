@@ -145,7 +145,7 @@ function updateLanguageTexts() {
   document.getElementById("download-exe-mirror").textContent = t.exeMirror;
   document.getElementById("download-source-btn").querySelector("span").textContent = t.src;
   document.getElementById("download-source-mirror").textContent = t.srcMirror;
-  document.querySelector("#download a[href*='github']").textContent = t.github;
+  document.getElementById("view-github").textContent = t.github;
 
   // Features
   document.querySelector("#features h2").textContent = t.featuresTitle;
