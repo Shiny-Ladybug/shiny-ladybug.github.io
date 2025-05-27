@@ -154,8 +154,5 @@ document.addEventListener('DOMContentLoaded', () => {
         animateBall();
         fetchLatestRelease();
     });
-
     window.addEventListener('resize', calculateOffsetsAndInitialize);
-
-
 });

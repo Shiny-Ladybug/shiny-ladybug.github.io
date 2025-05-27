@@ -27,30 +27,30 @@ const translations = {
     faqSubtitle: "常见问题解答",
     faqItems: [
       {
-        q: "我的 YOLO 模型无法下载。",
-        a: `下这玩意要梯子。或者你可以尝试查看 <a href="https://github.com/Shiny-Ladybug/assets/releases/latest" class="text-blue-600 underline hover:text-blue-800" rel="noopener noreferrer">模型发布页</a> 并下载 afk-seg.pt、afk-det.pt，然后放到 <strong>./models</strong> 文件夹下。`
+        q: "我无法下载 YOLO 模型。",
+        a: `我猜想你需要使用梯子。或者你可以尝试在 <a href="https://github.com/Shiny-Ladybug/assets/releases/latest" class="text-blue-600 underline hover:text-blue-800" rel="noopener noreferrer">模型发布页</a>，下载 afk-seg.pt、afk-det.pt 并放到 **\`./models\`** 文件夹下。`
       },
       {
         q: "我的后台检测功能无法正常工作。",
-        a: `如果你使用的是稳定版 Edge，请改用 Edge (Dev/Canary)。然后进入 <strong>edge://flags</strong> 并关闭 CalculateNativeWinOcclusion。<br>如果你使用的是 Chrome，请运行 <strong>"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe" --disable-features=CalculateNativeWinOcclusion</strong>。<br>如果你使用的是 Firefox，hook 功能可以正常工作。`
+        a: `如果你使用的是 **Edge**，请改用 **Chrome** 或 **Firefox**。2025年5月27日后，Edge 已无法通过任何方式关闭 \`CalculateNativeWinOcclusion\`，包括 Edge Beta (137.0.3296.39) 和 Edge Canary (137.0.3283.0)。因此，Edge 现已**停止支持**。<br>如果你使用的是 **Chrome**，请以 \`"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe" --disable-features=CalculateNativeWinOcclusion\` 启动。<br>如果你使用的是 **Firefox**，hook 功能可以正常工作。`
       },
       {
-        q: "它能运行多久？",
-        a: `我测试过一整晚，从 22:45 到 5:40（6 小时 55 分钟）。最后一次挂机检查没有通过。`
+        q: "可以运行多久？",
+        a: `我测试下来从 **22:45PM** 到 **5:40AM** *(6小时55分钟)*。最后一次挂机检查未能通过。`
       },
       {
-        q: "电脑休眠/睡眠/关闭屏幕时能运行吗？",
-        a: `不能。该程序需要通过 pyautogui 捕获屏幕。建议关闭屏幕、睡眠、休眠等超时设置，防止电脑进入休眠。`
+        q: "我可以在电脑休眠/睡眠/关闭屏幕时运行吗？",
+        a: `**不可以**。程序需要 pyautogui 捕获屏幕。建议你**关闭**屏幕、睡眠、休眠等超时设置，防止电脑进入休眠。`
       },
       {
         q: "支持 Linux/MacOS 吗？",
-        a: `不支持。我只用 Windows，且没有 Mac 测试。如果你真的想用，可以下载 <a href="https://github.com/Shiny-Ladybug/florr-auto-afk/releases/tag/v1.1.1" rel="noopener noreferrer" class="text-blue-600 underline hover:text-blue-800">v1.1.1 源代码</a> 自行部署。`
+        a: `**不支持**。我只有 Windows 设备，手头没有 Mac 测试。如果你真的想用，可以下载 <a href="https://github.com/Shiny-Ladybug/florr-auto-afk/releases/tag/v1.1.1" rel="noopener noreferrer" class="text-blue-600 underline hover:text-blue-800">v1.1.1 源代码</a> 自行部署。`
       }
     ],
     contactTitle: "联系",
     contactText: `如有问题或建议，请通过
         <a href="https://github.com/Shiny-Ladybug/florr-auto-afk/issues" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline hover:text-blue-800">
-          GitHub 问题
+          GitHub Issue
         </a>
         或 QQ 联系我们。`,
     creator: "作者：",
@@ -91,23 +91,23 @@ const translations = {
     faqItems: [
       {
         q: "The YOLO models cannot be downloaded.",
-        a: `Use VPN as needed. Or you can try to check <a href="https://github.com/Shiny-Ladybug/assets/releases/latest" class="text-blue-600 underline hover:text-blue-800" rel="noopener noreferrer">model release</a> and download afk-seg.pt, afk-det.pt and put them to <strong>./models</strong> folder`
+        a: `Use VPN as needed. Or you can try to check <a href="https://github.com/Shiny-Ladybug/assets/releases/latest" class="text-blue-600 underline hover:text-blue-800" rel="noopener noreferrer">model release</a> and download afk-seg.pt, afk-det.pt and put them to **\`./models\`** folder`
       },
       {
         q: "My hook function does not work properly.",
-        a: `If you are using Stable Edge, use Edge (Dev/Canary) instead. And continue to <strong>edge://flags</strong> and turn off CalculateNativeWinOcclusion.<br>If you are using Chrome, run <strong>"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe" --disable-features=CalculateNativeWinOcclusion</strong>. <br>If you are using Firefox, hook function will work properly.`
+        a: `If you are using **Edge**, use **Chrome** or **Firefox** instead. I find there is no sight of disabling \`CalculateNativeWinOcclusion\`  on 05/27/2025. Both Edge Beta (137.0.3296.39) and Edge Canary (137.0.3283.0) cannot disable the feature any longer. So I announce that Edge is **End of Support** now.<br>If you are using **Chrome**, run \`"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe" --disable-features=CalculateNativeWinOcclusion\`. <br>If you are using **Firefox**, hook function will work properly.`
       },
       {
         q: "How long can it run?",
-        a: `I've tested it for a night, it ran from 22:45PM to 5:40AM (6hrs 55mins). It failed to solve the last AFK Check.`
+        a: `I've tested it for a night, it ran from **22:45PM** to **5:40AM** *(6hrs 55mins)*. It failed to solve the last AFK Check.`
       },
       {
         q: "Can it run when my computer is sleeping/hibernating/screen off?",
-        a: `No. The program requires a Display to capture by pyautogui. Btw you'd better turn off Screen, sleep, hibernate timeouts to prevent the computer from sleeping.`
+        a: `**No**. The program requires a Display to capture by pyautogui. Btw you'd better **turn off** Screen, sleep, hibernate timeouts to prevent the computer from sleeping.`
       },
       {
         q: "Does it support Linux/MacOS?",
-        a: `No. I'm actually a fan of Windows. And my old MacBook is dead. I even don't have a machine to test. If you really want to use it. Download <a href="https://github.com/Shiny-Ladybug/florr-auto-afk/releases/tag/v1.1.1" rel="noopener noreferrer" class="text-blue-600 underline hover:text-blue-800">v1.1.1 Source Code</a> and deploy it yourself.`
+        a: `**No**. I'm actually a fan of Windows. And my old MacBook is dead. I even don't have a machine to test. If you really want to use it. Download <a href="https://github.com/Shiny-Ladybug/florr-auto-afk/releases/tag/v1.1.1" rel="noopener noreferrer" class="text-blue-600 underline hover:text-blue-800">v1.1.1 Source Code</a> and deploy it yourself.`
       }
     ],
     contactTitle: "Contact",
@@ -167,7 +167,7 @@ function updateLanguageTexts() {
   t.faqItems.forEach((item, index) => {
     if (faqItemDivs[index]) {
       faqItemDivs[index].querySelector("h3").textContent = item.q;
-      faqItemDivs[index].querySelector("p").innerHTML = item.a;
+      faqItemDivs[index].querySelector("p").innerHTML = marked.parse(item.a);
     }
   });
 
