@@ -1,6 +1,6 @@
 const translations = {
   zh: {
-    nav: ["下载", "功能", "画廊", "常见问题", "联系"],
+    nav: ["下载", "功能", "画廊", "常见问题", "联系", "English"],
     downloadTitle: "下载",
     downloadText: `你有没有因为奇怪的挂机检查而无法舒畅地玩 <a href="https://florr.io" class="text-blue-600 underline hover:text-blue-800" target="_blank" rel="noopener noreferrer">florr.io</a>？下载最新版的 Florr Auto AFK ，让你以高准确率轻松解决它们。目前我们的程序没有导致任何封号记录，因此现在是很安全的。`,
     latestVersion: "最新版本：",
@@ -61,7 +61,7 @@ const translations = {
     buttonText: "English"
   },
   en: {
-    nav: ["Download", "Features", "Gallery", "FAQ", "Contact"],
+    nav: ["Download", "Features", "Gallery", "FAQ", "Contact", "中文"],
     downloadTitle: "Download",
     downloadText: `Tired of the odd, snake-like AFK Checks that stop you from relaxing while playing <a href="https://florr.io" class="text-blue-600 underline hover:text-blue-800" target="_blank" rel="noopener noreferrer">florr.io</a>? Download the latest version of Florr Auto AFK to easily bypass them with high accuracy. Our application has not caused any bans so far, so it appears to be safe to use.`,
     latestVersion: "Latest version: ",
@@ -133,7 +133,7 @@ function updateLanguageTexts() {
   const t = translations[lang];
 
   // Navigation
-  const navLinks = document.querySelectorAll("#navbar a");
+  const navLinks = document.querySelectorAll("#navbar a, #navbar button");
   navLinks.forEach((el, i) => (el.textContent = t.nav[i]));
 
   // Download section
