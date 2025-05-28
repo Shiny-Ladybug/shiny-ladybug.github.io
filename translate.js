@@ -58,7 +58,6 @@ const translations = {
     websiteBy: "网站由：",
     copyright:
       "© 2025 Florr Auto AFK。保留所有权利。项目遵循 GPL-3.0 许可协议。",
-    buttonText: "English"
   },
   en: {
     nav: ["Download", "Features", "Gallery", "FAQ", "Contact", "中文"],
@@ -121,7 +120,6 @@ const translations = {
     websiteBy: "Website by:",
     copyright:
       "© 2025 Florr Auto AFK. All rights reserved. Project under GPL-3.0 License.",
-    buttonText: "中文"
   }
 };
 
@@ -196,9 +194,6 @@ function updateLanguageTexts() {
       <br />
       ${t.copyright}
     `;
-
-  // Button text
-  langToggle.textContent = t.buttonText;
 }
 
 langToggle.addEventListener("click", () => {
