@@ -79,7 +79,7 @@ window.fetchLatestRelease = fetchLatestRelease;
 document.addEventListener('DOMContentLoaded', () => {
     const ball = document.getElementById('afk-ball');
     const base = document.getElementById('afk-base');
-    const animationContainer = base.parentElement; // The div with 'position: relative'
+    const animationContainer = base.parentElement;
 
     if (!ball || !base || !animationContainer) {
         console.error("AFK animation elements not found!");
@@ -114,8 +114,40 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    function createParticles(x, y) {
+        for (let i = 0; i < 20; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = `${x}px`;
+            particle.style.top = `${y}px`;
+            animationContainer.appendChild(particle);
+
+            const angle = Math.random() * 2 * Math.PI;
+            const distance = Math.random() * 80;
+            const duration = 1000;
+
+            particle.animate([
+                {
+                    transform: 'translate(0, 0)',
+                    opacity: 1
+                },
+                {
+                    transform: `translate(${Math.cos(angle) * distance}px, ${Math.sin(angle) * distance}px)`,
+                    opacity: 0
+                }
+            ], {
+                duration: duration,
+                easing: 'ease-out',
+                fill: 'forwards'
+            });
+
+            setTimeout(() => particle.remove(), duration);
+        }
+    }
+
     function animateBall() {
         if (pathPoints.length < 2) return;
+		
         if (currentSegment >= pathPoints.length - 1 && progressInSegment >= 1.0) {
             currentSegment = 0;
             progressInSegment = 0;
@@ -126,16 +158,20 @@ document.addEventListener('DOMContentLoaded', () => {
             requestAnimationFrame(animateBall);
             return;
         }
+		
         if (currentSegment >= pathPoints.length - 1) {
             currentSegment = 0;
             progressInSegment = 0;
         }
-
+		
         const p1 = pathPoints[currentSegment];
         const p2 = pathPoints[currentSegment + 1];
-
         const targetX = p1.x + (p2.x - p1.x) * progressInSegment;
         const targetY = p1.y + (p2.y - p1.y) * progressInSegment;
+
+		if (currentSegment >= pathPoints.length - 2 && progressInSegment >= 1.0 - animationSpeed) {
+			createParticles(offsetX + targetX + 10, offsetY + targetY + 10);
+		}
 
         ball.style.left = (offsetX + targetX) + 'px';
         ball.style.top = (offsetY + targetY) + 'px';

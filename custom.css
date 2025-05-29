@@ -12,6 +12,19 @@ opacity: 1;
 transition: opacity 0.5s ease;
 }
 
+.particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: rgba(0, 255, 0, 0.8);
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.afk-animation-container {
+  position: relative;
+}
+
 #download {
 position: relative;
 /* Needed for the ::before pseudo-element */
