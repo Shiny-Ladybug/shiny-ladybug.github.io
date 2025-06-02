@@ -1,6 +1,6 @@
 const translations = {
   zh: {
-    nav: ["下载", "功能", "画廊", "常见问题", "联系", "English"],
+    nav: ["下载", "功能", "画廊", "常见问题", "测试", "联系", "English"],
     downloadTitle: "下载",
     downloadText: `你有没有因为奇怪的挂机检查而无法舒畅地玩 <a href="https://florr.io" class="text-blue-600 underline hover:text-blue-800" target="_blank" rel="noopener noreferrer">florr.io</a>？下载最新版的 Florr Auto AFK ，让你以高准确率轻松解决它们。目前我们的程序没有导致任何封号记录，因此现在是很安全的。`,
     latestVersion: "最新版本：",
@@ -22,7 +22,7 @@ const translations = {
     ],
     galleryTitle: "画廊",
     galleryText: "以下是模型解决的挂机检查图集和训练统计。",
-    trainingStats: "2025 年 5 月 23 日训练，使用 225 个样本（192 训练样本，33 验证样本），共 431 轮训练。",
+    trainingStats: "2025 年 6 月 1 日训练，使用 878 个样本（747 训练样本，131 验证样本），共 521 轮训练。",
     faqTitle: "常见问题",
     faqSubtitle: "常见问题解答",
     faqItems: [
@@ -47,6 +47,8 @@ const translations = {
         a: `**不支持**。我只有 Windows 设备，手头没有 Mac 测试。如果你真的想用，可以下载 <a href="https://github.com/Shiny-Ladybug/florr-auto-afk/releases/tag/v1.1.1" rel="noopener noreferrer" class="text-blue-600 underline hover:text-blue-800">v1.1.1 源代码</a> 自行部署。`
       }
     ],
+    testTitle: "测试",
+    testDesc: "florr-auto-afk v1.2.9(Release) 测试视频",
     contactTitle: "联系",
     contactText: `如有问题或建议，请通过
         <a href="https://github.com/Shiny-Ladybug/florr-auto-afk/issues" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline hover:text-blue-800">
@@ -60,7 +62,7 @@ const translations = {
       "© 2025 Florr Auto AFK。保留所有权利。项目遵循 GPL-3.0 许可协议。",
   },
   en: {
-    nav: ["Download", "Features", "Gallery", "FAQ", "Contact", "中文"],
+    nav: ["Download", "Features", "Gallery", "FAQ", "Test", "Contact", "中文"],
     downloadTitle: "Download",
     downloadText: `Tired of the odd, snake-like AFK Checks that stop you from relaxing while playing <a href="https://florr.io" class="text-blue-600 underline hover:text-blue-800" target="_blank" rel="noopener noreferrer">florr.io</a>? Download the latest version of Florr Auto AFK to easily bypass them with high accuracy. Our application has not caused any bans so far, so it appears to be safe to use.`,
     latestVersion: "Latest version: ",
@@ -84,7 +86,7 @@ const translations = {
     galleryText:
       "A collage of the countless AFK checks our model solved, and the training statistics.",
     trainingStats:
-      "Trained on 5/23/2025 based on 225 instances (192 train, 33 val) with 431 epochs.",
+      "Trained on `6/01/2025` based on 878 instances (747 train ~~actually 747 should be a boeing jet instead of a train~~, 131 val) with 521 epochs",
     faqTitle: "FAQ",
     faqSubtitle: "Frequently Asked Questions.",
     faqItems: [
@@ -109,6 +111,8 @@ const translations = {
         a: `**No**. I'm actually a fan of Windows. And my old MacBook is dead. I even don't have a machine to test. If you really want to use it. Download <a href="https://github.com/Shiny-Ladybug/florr-auto-afk/releases/tag/v1.1.1" rel="noopener noreferrer" class="text-blue-600 underline hover:text-blue-800">v1.1.1 Source Code</a> and deploy it yourself.`
       }
     ],
+    testTitle: "Test",
+    testDesc: "Test video of florr-auto-afk v1.2.9(Release)",
     contactTitle: "Contact",
     contactText: `For questions or suggestions, contact us via
         <a href="https://github.com/Shiny-Ladybug/florr-auto-afk/issues" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline hover:text-blue-800">
@@ -155,7 +159,7 @@ function updateLanguageTexts() {
   // Gallery
   document.querySelector("#gallery h2").textContent = t.galleryTitle;
   document.querySelector("#gallery p.text-xl").textContent = t.galleryText;
-  document.querySelector("#gallery p.text-lg").textContent = t.trainingStats;
+  document.querySelector("#gallery p.text-lg").innerHTML = marked.parse(t.trainingStats);
 
   // FAQ Section
   document.querySelector("#faq h2").textContent = t.faqTitle;
@@ -168,6 +172,10 @@ function updateLanguageTexts() {
       faqItemDivs[index].querySelector("p").innerHTML = marked.parse(item.a);
     }
   });
+
+  // Test Section
+  document.querySelector("#test h2").textContent = t.testTitle;
+  document.querySelector("#test p.text-xl").textContent = t.testDesc;
 
   // Contact
   document.querySelector("#contact h2").textContent = t.contactTitle;

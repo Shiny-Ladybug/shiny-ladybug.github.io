@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function animateBall() {
         if (pathPoints.length < 2) return;
-		
+
         if (currentSegment >= pathPoints.length - 1 && progressInSegment >= 1.0) {
             currentSegment = 0;
             progressInSegment = 0;
@@ -158,20 +158,20 @@ document.addEventListener('DOMContentLoaded', () => {
             requestAnimationFrame(animateBall);
             return;
         }
-		
+
         if (currentSegment >= pathPoints.length - 1) {
             currentSegment = 0;
             progressInSegment = 0;
         }
-		
+
         const p1 = pathPoints[currentSegment];
         const p2 = pathPoints[currentSegment + 1];
         const targetX = p1.x + (p2.x - p1.x) * progressInSegment;
         const targetY = p1.y + (p2.y - p1.y) * progressInSegment;
 
-		if (currentSegment >= pathPoints.length - 2 && progressInSegment >= 1.0 - animationSpeed) {
-			createParticles(offsetX + targetX + 10, offsetY + targetY + 10);
-		}
+        if (currentSegment >= pathPoints.length - 2 && progressInSegment >= 1.0 - animationSpeed) {
+            createParticles(offsetX + targetX + 10, offsetY + targetY + 10);
+        }
 
         ball.style.left = (offsetX + targetX) + 'px';
         ball.style.top = (offsetY + targetY) + 'px';
